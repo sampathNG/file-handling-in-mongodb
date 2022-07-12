@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express")
 const router = express.Router()
 const mongoose = require("mongoose")
@@ -7,7 +8,7 @@ const path = require("path")
 const {GridFsStorage} = require("multer-gridfs-storage")
 const Grid = require("gridfs-stream")
 
-const mongoURI = "mongodb://localhost/multer"
+const mongoURI = process.env.URL
 const conn = mongoose.createConnection(mongoURI);
 
 // Init gfs

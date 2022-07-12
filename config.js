@@ -1,5 +1,5 @@
-const mongoose = require("mongoose")
-const url = "mongodb://localhost/multer"
-module.exports = mongoose.connect(url,({useNewUrlParser:true}),err=>{
-    console.log("connected to mognodb shell")
+require('dotenv').config()
+const mongoose = require("mongoose");
+module.exports = mongoose.connect(process.env.URL,({useNewUrlParser:true}),err=>{
+    console.log("connected to mognodb")
 })
